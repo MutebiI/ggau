@@ -1,4 +1,3 @@
-
 'use client'
 import { motion } from 'framer-motion'
 import { Globe, Target, Users, Heart, ArrowRight, Shield, MapPin, Building2 } from 'lucide-react'
@@ -295,9 +294,14 @@ function TimelineItem({ number, title, description, icon, side, color }: {
   )
 }
 
-// New Network Stat Component
-function NetworkStat({ number, title, description, color }: any) {
-  const colorStyles = {
+// New Network Stat Component - FIXED
+function NetworkStat({ number, title, description, color }: { 
+  number: string; 
+  title: string; 
+  description: string; 
+  color: string; 
+}) {
+  const colorStyles: { [key: string]: string } = {
     purple: 'text-purple-600',
     pink: 'text-pink-600',
     indigo: 'text-indigo-600'
