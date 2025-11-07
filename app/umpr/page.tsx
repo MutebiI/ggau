@@ -4,7 +4,7 @@ import { Factory, Microscope, FlaskConical, Target, Building, Users, ArrowRight 
 
 export default function UMPR() {
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 text-white py-24">
         <div className="absolute inset-0 bg-black/20"></div>
