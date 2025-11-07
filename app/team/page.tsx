@@ -1,6 +1,48 @@
 'use client'
 import { motion } from 'framer-motion'
 import { Award, GraduationCap, BookOpen, Users, Target, Microscope, FlaskConical, Dna, Brain, Heart, ArrowRight, Building2, Calendar, BarChart3 } from 'lucide-react'
+import { ReactNode } from 'react'
+
+// Define types for our components
+type ColorKey = 'purple' | 'pink' | 'indigo' | 'teal'
+
+interface ExpertiseStatProps {
+  number: string
+  label: string
+  icon: ReactNode
+}
+
+interface TeamMemberProps {
+  name: string
+  role: string
+  education: string
+  experience: string
+  expertise: string[]
+  achievements: string[]
+  icon: ReactNode
+  color: ColorKey
+}
+
+interface ExpertiseAreaProps {
+  title: string
+  proficiency: number
+  description: string
+  projects: number
+  color: ColorKey
+}
+
+interface CredentialItemProps {
+  icon: ReactNode
+  title: string
+  count: string
+  description: string
+}
+
+interface PartnerItemProps {
+  name: string
+  location: string
+  focus: string
+}
 
 export default function Team() {
   return (
@@ -291,7 +333,7 @@ export default function Team() {
 }
 
 // Expertise Stat Component
-function ExpertiseStat({ number, label, icon }: any) {
+function ExpertiseStat({ number, label, icon }: ExpertiseStatProps) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
@@ -311,11 +353,12 @@ function ExpertiseStat({ number, label, icon }: any) {
 }
 
 // Team Member Component (No Photo)
-function TeamMember({ name, role, education, experience, expertise, achievements, icon, color }: any) {
-  const colorStyles = {
+function TeamMember({ name, role, education, experience, expertise, achievements, icon, color }: TeamMemberProps) {
+  const colorStyles: Record<ColorKey, string> = {
     purple: 'bg-purple-500',
     pink: 'bg-pink-500',
-    indigo: 'bg-indigo-500'
+    indigo: 'bg-indigo-500',
+    teal: 'bg-teal-500'
   }
 
   return (
@@ -373,8 +416,8 @@ function TeamMember({ name, role, education, experience, expertise, achievements
 }
 
 // Expertise Area Component
-function ExpertiseArea({ title, proficiency, description, projects, color }: any) {
-  const colorStyles = {
+function ExpertiseArea({ title, proficiency, description, projects, color }: ExpertiseAreaProps) {
+  const colorStyles: Record<ColorKey, string> = {
     purple: 'bg-purple-500',
     pink: 'bg-pink-500',
     indigo: 'bg-indigo-500',
@@ -414,7 +457,7 @@ function ExpertiseArea({ title, proficiency, description, projects, color }: any
 }
 
 // Credential Item Component
-function CredentialItem({ icon, title, count, description }: any) {
+function CredentialItem({ icon, title, count, description }: CredentialItemProps) {
   return (
     <motion.div
       initial={{ opacity: 0, x: 30 }}
@@ -437,7 +480,7 @@ function CredentialItem({ icon, title, count, description }: any) {
 }
 
 // Partner Item Component
-function PartnerItem({ name, location, focus }: any) {
+function PartnerItem({ name, location, focus }: PartnerItemProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
