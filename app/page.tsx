@@ -76,7 +76,7 @@ export default function Home() {
               icon={<Microscope className="w-8 h-8" />}
               title="African Pillar Initiative"
               description="A continental vision to transform Africa into a biotechnology and medical innovation hub."
-              link="/api-initiative"
+              link="/african-pillar-initiative"
               color="green"
             />
             <InitiativeCard
@@ -104,8 +104,15 @@ function DNABackground() {
   )
 }
 
-function InitiativeCard({ icon, title, description, link, color }: any) {
-  const colors = {
+// Fixed InitiativeCard Component
+function InitiativeCard({ icon, title, description, link, color }: { 
+  icon: React.ReactNode; 
+  title: string; 
+  description: string; 
+  link: string; 
+  color: string; 
+}) {
+  const colors: { [key: string]: string } = {
     blue: 'bg-blue-100 text-blue-600',
     green: 'bg-green-100 text-green-600', 
     purple: 'bg-purple-100 text-purple-600'
