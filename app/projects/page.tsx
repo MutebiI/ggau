@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import { FlaskConical, Microscope, Dna, Heart, Brain, TestTube, ArrowRight, Calendar, Users, Target } from 'lucide-react'
+import { ReactNode } from 'react'
 
 export default function Projects() {
   return (
@@ -188,8 +189,7 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Collaboration Callout */}
-            {/* Professional Research Partnership */}
+      {/* Professional Research Partnership */}
       <section className="py-24 bg-gradient-to-r from-teal-600 via-emerald-600 to-cyan-600 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -229,8 +229,12 @@ export default function Projects() {
   )
 }
 
-// New Stat Card Component
-function StatCard({ number, label, delay }: any) {
+// Fixed Stat Card Component
+function StatCard({ number, label, delay }: { 
+  number: string; 
+  label: string; 
+  delay: number; 
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
@@ -244,9 +248,17 @@ function StatCard({ number, label, delay }: any) {
   )
 }
 
-// New Project Card with Progress
-function ProjectCard({ icon, title, description, status, progress, color, team }: any) {
-  const colorStyles = {
+// Fixed Project Card with Progress
+function ProjectCard({ icon, title, description, status, progress, color, team }: { 
+  icon: ReactNode; 
+  title: string; 
+  description: string; 
+  status: string; 
+  progress: number; 
+  color: string; 
+  team: number; 
+}) {
+  const colorStyles: { [key: string]: string } = {
     emerald: 'bg-emerald-500',
     teal: 'bg-teal-500',
     cyan: 'bg-cyan-500',
@@ -255,7 +267,7 @@ function ProjectCard({ icon, title, description, status, progress, color, team }
     amber: 'bg-amber-500'
   }
 
-  const bgStyles = {
+  const bgStyles: { [key: string]: string } = {
     emerald: 'hover:border-emerald-300',
     teal: 'hover:border-teal-300',
     cyan: 'hover:border-cyan-300',
@@ -320,9 +332,15 @@ function ProjectCard({ icon, title, description, status, progress, color, team }
   )
 }
 
-// New Research Domain Component
-function ResearchDomain({ title, description, tests, icon, color }: any) {
-  const colorStyles = {
+// Fixed Research Domain Component
+function ResearchDomain({ title, description, tests, icon, color }: { 
+  title: string; 
+  description: string; 
+  tests: string[]; 
+  icon: ReactNode; 
+  color: string; 
+}) {
+  const colorStyles: { [key: string]: string } = {
     emerald: 'text-emerald-600 bg-emerald-100',
     teal: 'text-teal-600 bg-teal-100'
   }
