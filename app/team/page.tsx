@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Award, GraduationCap, BookOpen, Users, Target, Microscope, FlaskConical, Dna, Brain, Heart, ArrowRight, Building2, Calendar, BarChart3 } from 'lucide-react'
+import { Award, GraduationCap, BookOpen, Users, Target, Microscope, FlaskConical, Dna, Brain, Heart, ArrowRight, Building2, Calendar, BarChart3, FileText, Mail, Phone } from 'lucide-react'
 import { ReactNode } from 'react'
 
 // Define types for our components
@@ -308,7 +308,8 @@ export default function Team() {
             <p className="text-base md:text-lg lg:text-xl text-purple-100 mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed px-4">
               Contribute to groundbreaking genetics research and help transform healthcare in Africa.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center px-4">
+            
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center px-4 mb-8 md:mb-12">
               <motion.a
                 href="/get-involved"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -317,13 +318,35 @@ export default function Team() {
                 <span>View Opportunities</span>
                 <Users className="w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
               </motion.a>
+              
+              {/* WORKING CV SUBMISSION BUTTON */}
               <motion.a
-                href="/contact"
+                href="mailto:mwesinelie@yahoo.com,mneliah1978@gmail.com?subject=CV Submission - GGAU Research Team Application&body=Hello GGAU Research Team,%0D%0A%0D%0AI am interested in joining your research team and have attached my CV for your consideration.%0D%0A%0D%0APosition of Interest: [Please specify research area or position]%0D%0A%0D%0A---%0D%0A[Your Full Name]%0D%0A[Your Phone Number]%0D%0A[Your Current Role/Institution]%0D%0A[Your Research Interests]"
                 whileHover={{ scale: 1.05, y: -2 }}
-                className="group bg-transparent text-white border-2 border-white px-6 py-4 md:px-10 md:py-5 rounded-2xl font-bold flex items-center justify-center gap-3 md:gap-4 hover:bg-white/10 transition-all duration-300 w-full sm:w-auto text-sm md:text-base"
+                className="group bg-amber-500 text-white px-6 py-4 md:px-10 md:py-5 rounded-2xl font-bold flex items-center justify-center gap-3 md:gap-4 hover:bg-amber-600 hover:shadow-2xl transition-all duration-300 shadow-lg w-full sm:w-auto text-sm md:text-base"
               >
-                <span>Submit CV</span>
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
+                <FileText className="w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
+                Submit Your CV
+              </motion.a>
+            </div>
+
+            {/* Additional Contact Options */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-md mx-auto">
+              <motion.a
+                href="mailto:mwesinelie@yahoo.com,mneliah1978@gmail.com?subject=GGAU Team Inquiry"
+                whileHover={{ scale: 1.02 }}
+                className="flex items-center justify-center gap-2 p-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 text-white hover:bg-white/20 transition-all duration-200"
+              >
+                <Mail className="w-4 h-4" />
+                <span className="text-sm font-medium">Email Team</span>
+              </motion.a>
+              <motion.a
+                href="tel:+256760051963"
+                whileHover={{ scale: 1.02 }}
+                className="flex items-center justify-center gap-2 p-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 text-white hover:bg-white/20 transition-all duration-200"
+              >
+                <Phone className="w-4 h-4" />
+                <span className="text-sm font-medium">Call Team</span>
               </motion.a>
             </div>
           </motion.div>
