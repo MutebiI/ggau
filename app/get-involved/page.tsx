@@ -1,8 +1,15 @@
 'use client'
 import { motion } from 'framer-motion'
 import { Users, GraduationCap, Heart, Target, ArrowRight, Mail, Phone, Building2, Microscope, FlaskConical, BookOpen, Shield, Globe, Zap, HeartHandshake } from 'lucide-react'
+import { ReactNode } from 'react'
 
 export default function GetInvolved() {
+  const scrollToContact = () => {
+    document.getElementById('contact-section')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    })
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* Hero Section */}
@@ -35,6 +42,16 @@ export default function GetInvolved() {
             <p className="text-lg md:text-xl lg:text-2xl mb-8 md:mb-12 text-emerald-100 max-w-4xl mx-auto leading-relaxed font-light px-4">
               Partner with us to advance genomics research, build healthcare capacity, and transform medical innovation across Africa
             </p>
+
+            <motion.button
+              onClick={scrollToContact}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-emerald-700 px-6 py-3 md:px-8 md:py-4 rounded-2xl font-bold flex items-center justify-center gap-3 hover:shadow-2xl transition-all duration-300 shadow-lg mx-auto"
+            >
+              <Mail className="w-5 h-5" />
+              Start Conversation
+            </motion.button>
           </motion.div>
         </div>
       </section>
@@ -64,12 +81,12 @@ export default function GetInvolved() {
               audience="Universities, Research Institutions, Pharmaceutical Companies"
               benefits={[
                 "Access to African genetic data",
-                "Joint publication opportunities",
+                "Joint publication opportunities", 
                 "Clinical trial partnerships",
                 "Technology transfer"
               ]}
               color="emerald"
-              action="Discuss Collaboration"
+              contactSubject="Research Collaboration Inquiry"
             />
             <EngagementCard
               icon={<Building2 className="w-6 h-6 md:w-8 md:h-8" />}
@@ -83,7 +100,7 @@ export default function GetInvolved() {
                 "Research mentorship"
               ]}
               color="blue"
-              action="Explore Partnerships"
+              contactSubject="Academic Partnership Inquiry"
             />
             <EngagementCard
               icon={<Zap className="w-6 h-6 md:w-8 md:h-8" />}
@@ -92,12 +109,12 @@ export default function GetInvolved() {
               audience="Investors, Donors, Philanthropic Organizations"
               benefits={[
                 "Medical equipment funding",
-                "Research infrastructure",
+                "Research infrastructure", 
                 "Technology acquisition",
                 "Capacity building initiatives"
               ]}
               color="purple"
-              action="Learn About Investing"
+              contactSubject="Investment Opportunity Inquiry"
             />
             <EngagementCard
               icon={<GraduationCap className="w-6 h-6 md:w-8 md:h-8" />}
@@ -111,7 +128,7 @@ export default function GetInvolved() {
                 "Post-doctoral positions"
               ]}
               color="amber"
-              action="View Opportunities"
+              contactSubject="Career Opportunity Inquiry"
             />
             <EngagementCard
               icon={<Heart className="w-6 h-6 md:w-8 md:h-8" />}
@@ -121,11 +138,11 @@ export default function GetInvolved() {
               benefits={[
                 "Community health outreach",
                 "Scientific communication",
-                "Event organization",
+                "Event organization", 
                 "Data analysis support"
               ]}
               color="rose"
-              action="Become a Volunteer"
+              contactSubject="Volunteer Program Inquiry"
             />
             <EngagementCard
               icon={<Shield className="w-6 h-6 md:w-8 md:h-8" />}
@@ -139,7 +156,7 @@ export default function GetInvolved() {
                 "Research materials"
               ]}
               color="teal"
-              action="Support Resources"
+              contactSubject="Resource Support Inquiry"
             />
           </div>
         </div>
@@ -173,7 +190,7 @@ export default function GetInvolved() {
             <InitiativeCard
               title="African Genomics Database"
               description="Building comprehensive genetic database for African populations to advance personalized medicine"
-              status="Development"
+              status="Development" 
               progress={40}
               needs={["Computing Resources", "Data Scientists", "Storage Infrastructure"]}
             />
@@ -223,7 +240,7 @@ export default function GetInvolved() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white">
+      <section id="contact-section" className="py-16 md:py-24 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -239,12 +256,12 @@ export default function GetInvolved() {
             
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center px-4">
               <motion.a
-                href="/contact"
+                href="mailto:mwesinelie@yahoo.com?subject=GGAU Partnership Inquiry&body=Hello GGAU Team, I'm interested in learning more about partnership opportunities."
                 whileHover={{ scale: 1.05, y: -2 }}
                 className="group bg-white text-emerald-700 px-6 py-4 md:px-10 md:py-5 rounded-2xl font-bold flex items-center justify-center gap-3 md:gap-4 hover:shadow-2xl transition-all duration-300 shadow-lg w-full sm:w-auto text-sm md:text-base"
               >
                 <Mail className="w-4 h-4 md:w-5 md:h-5" />
-                Contact Our Team
+                Email Our Team
               </motion.a>
               
               <motion.a
@@ -278,23 +295,29 @@ export default function GetInvolved() {
 
 // Engagement Card Component
 interface EngagementCardProps {
-  icon: React.ReactNode
+  icon: ReactNode
   title: string
   description: string
   audience: string
   benefits: string[]
   color: 'emerald' | 'blue' | 'purple' | 'amber' | 'rose' | 'teal'
-  action: string
+  contactSubject: string
 }
 
-function EngagementCard({ icon, title, description, audience, benefits, color, action }: EngagementCardProps) {
+function EngagementCard({ icon, title, description, audience, benefits, color, contactSubject }: EngagementCardProps) {
   const colorStyles = {
     emerald: 'bg-emerald-500 hover:border-emerald-300',
-    blue: 'bg-blue-500 hover:border-blue-300',
+    blue: 'bg-blue-500 hover:border-blue-300', 
     purple: 'bg-purple-500 hover:border-purple-300',
     amber: 'bg-amber-500 hover:border-amber-300',
     rose: 'bg-rose-500 hover:border-rose-300',
     teal: 'bg-teal-500 hover:border-teal-300'
+  }
+
+  const scrollToContact = () => {
+    document.getElementById('contact-section')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    })
   }
 
   return (
@@ -342,11 +365,12 @@ function EngagementCard({ icon, title, description, audience, benefits, color, a
       </div>
 
       <motion.button
+        onClick={scrollToContact}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         className="w-full bg-gray-100 text-gray-700 py-2 md:py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-200 transition-all duration-200 text-sm md:text-base"
       >
-        {action}
+        Discuss {title.split(' ')[0]}
         <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
       </motion.button>
     </motion.div>
@@ -444,7 +468,7 @@ function SuccessStory({ partner, collaboration, outcome, duration }: SuccessStor
 
 // Contact Info Component
 interface ContactInfoProps {
-  icon: React.ReactNode
+  icon: ReactNode
   label: string
   value: string
 }
