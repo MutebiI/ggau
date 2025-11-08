@@ -40,7 +40,7 @@ export default function Contact() {
       <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
-            {/* Contact Form - Left Side */}
+            {/* Contact Form - Left Side - NOW WORKING! */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -52,109 +52,52 @@ export default function Contact() {
               </h2>
               <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8">
                 Interested in partnership, research collaboration, or learning more about our initiatives? 
-                Fill out the form and our team will get back to you within 24 hours.
+                Click the button below to email our team directly.
               </p>
 
-              <form className="space-y-4 md:space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
-                      First Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      required
-                      className="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm md:text-base"
-                      placeholder="Enter your first name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Last Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      required
-                      className="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm md:text-base"
-                      placeholder="Enter your last name"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm md:text-base"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="organization" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Organization
-                  </label>
-                  <input
-                    type="text"
-                    id="organization"
-                    name="organization"
-                    className="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm md:text-base"
-                    placeholder="Your company or institution"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Subject *
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    required
-                    className="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-sm md:text-base"
+              {/* WORKING EMAIL SOLUTION */}
+              <div className="space-y-4 md:space-y-6">
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 md:p-6">
+                  <h3 className="text-lg md:text-xl font-semibold text-blue-900 mb-3 md:mb-4">
+                    Quick Contact Method
+                  </h3>
+                  <p className="text-blue-700 text-sm md:text-base mb-4 md:mb-6">
+                    For the fastest response, email both team members simultaneously:
+                  </p>
+                  
+                  <motion.a
+                    href="mailto:mwesinelie@yahoo.com,mneliah1978@gmail.com?subject=GGAU Contact Inquiry&body=Hello GGAU Team,%0D%0A%0D%0AI would like to get in touch about:%0D%0A%0D%0A[Please describe your inquiry here]%0D%0A%0D%0A---%0D%0A[Your Name]%0D%0A[Your Organization]%0D%0A[Your Contact Information]"
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full bg-blue-600 text-white py-3 md:py-4 px-6 md:px-8 rounded-lg font-semibold flex items-center justify-center gap-2 md:gap-3 hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl text-sm md:text-base"
                   >
-                    <option value="">Select a subject</option>
-                    <option value="partnership">Partnership Opportunity</option>
-                    <option value="research">Research Collaboration</option>
-                    <option value="donation">Support & Donation</option>
-                    <option value="career">Career Opportunity</option>
-                    <option value="general">General Inquiry</option>
-                  </select>
+                    <Mail className="w-4 h-4 md:w-5 md:h-5" />
+                    Email Both Team Members
+                  </motion.a>
+                  
+                  <p className="text-blue-600 text-xs md:text-sm mt-3 md:mt-4 text-center">
+                    📧 Sent to both: mwesinelie@yahoo.com & mneliah1978@gmail.com
+                  </p>
                 </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    required
-                    className="w-full px-3 py-2 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none text-sm md:text-base"
-                    placeholder="Tell us about your inquiry or project..."
-                  ></textarea>
+                {/* Additional Contact Options */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                  <motion.a
+                    href="mailto:mwesinelie@yahoo.com?subject=GGAU Contact Inquiry"
+                    whileHover={{ scale: 1.02 }}
+                    className="bg-green-50 border border-green-200 text-green-700 py-2 md:py-3 px-4 rounded-lg font-medium text-center hover:bg-green-100 transition-all duration-200 text-xs md:text-sm"
+                  >
+                    Email Nelson Only
+                  </motion.a>
+                  <motion.a
+                    href="mailto:mneliah1978@gmail.com?subject=GGAU Contact Inquiry" 
+                    whileHover={{ scale: 1.02 }}
+                    className="bg-purple-50 border border-purple-200 text-purple-700 py-2 md:py-3 px-4 rounded-lg font-medium text-center hover:bg-purple-100 transition-all duration-200 text-xs md:text-sm"
+                  >
+                    Email Erinah Only
+                  </motion.a>
                 </div>
-
-                <motion.button
-                  type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-blue-600 text-white py-3 md:py-4 px-6 md:px-8 rounded-lg font-semibold flex items-center justify-center gap-2 md:gap-3 hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl text-sm md:text-base"
-                >
-                  <Send className="w-4 h-4 md:w-5 md:h-5" />
-                  Send Message
-                </motion.button>
-              </form>
+              </div>
             </motion.div>
 
             {/* Contact Details - Right Side */}
@@ -207,7 +150,7 @@ export default function Contact() {
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-green-500 rounded-lg md:rounded-xl flex items-center justify-center mb-3 md:mb-4 flex-shrink-0">
                     <Mail className="w-5 h-5 md:w-6 md:h-6 text-white" />
                   </div>
-                  <h4 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">Email Address</h4>
+                  <h4 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">Email Addresses</h4>
                   <p className="text-green-700 font-semibold text-sm md:text-base break-all">mwesinelie@yahoo.com</p>
                   <p className="text-green-600 text-xs md:text-sm mt-1 break-all">mneliah1978@gmail.com</p>
                 </div>
