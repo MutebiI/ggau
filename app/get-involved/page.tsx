@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Users, GraduationCap, Heart, Target, ArrowRight, Mail, Phone, Building2, Microscope, FlaskConical, BookOpen, Shield, Globe, Zap, HeartHandshake } from 'lucide-react'
+import { Users, GraduationCap, Heart, Target, ArrowRight, Mail, Phone, Building2, Microscope, FlaskConical, BookOpen, Shield, Globe, Zap, HeartHandshake, FileText } from 'lucide-react'
 import { ReactNode } from 'react'
 
 export default function GetInvolved() {
@@ -129,6 +129,7 @@ export default function GetInvolved() {
               ]}
               color="amber"
               contactSubject="Career Opportunity Inquiry"
+              showCvButton={true}
             />
             <EngagementCard
               icon={<Heart className="w-6 h-6 md:w-8 md:h-8" />}
@@ -256,7 +257,7 @@ export default function GetInvolved() {
             
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center px-4">
               <motion.a
-                href="mailto:mwesinelie@yahoo.com?subject=GGAU Partnership Inquiry&body=Hello GGAU Team, I'm interested in learning more about partnership opportunities."
+                href="mailto:mwesinelie@yahoo.com,mneliah1978@gmail.com?subject=GGAU Partnership Inquiry&body=Hello GGAU Team,%0D%0A%0D%0AI'm interested in learning more about partnership opportunities with GGAU.%0D%0A%0D%0A[Please describe your specific interest]%0D%0A%0D%0A---%0D%0A[Your Name]%0D%0A[Your Organization]%0D%0A[Your Contact Information]"
                 whileHover={{ scale: 1.05, y: -2 }}
                 className="group bg-white text-emerald-700 px-6 py-4 md:px-10 md:py-5 rounded-2xl font-bold flex items-center justify-center gap-3 md:gap-4 hover:shadow-2xl transition-all duration-300 shadow-lg w-full sm:w-auto text-sm md:text-base"
               >
@@ -302,9 +303,10 @@ interface EngagementCardProps {
   benefits: string[]
   color: 'emerald' | 'blue' | 'purple' | 'amber' | 'rose' | 'teal'
   contactSubject: string
+  showCvButton?: boolean
 }
 
-function EngagementCard({ icon, title, description, audience, benefits, color, contactSubject }: EngagementCardProps) {
+function EngagementCard({ icon, title, description, audience, benefits, color, contactSubject, showCvButton = false }: EngagementCardProps) {
   const colorStyles = {
     emerald: 'bg-emerald-500 hover:border-emerald-300',
     blue: 'bg-blue-500 hover:border-blue-300', 
@@ -364,15 +366,30 @@ function EngagementCard({ icon, title, description, audience, benefits, color, c
         </ul>
       </div>
 
-      <motion.button
-        onClick={scrollToContact}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        className="w-full bg-gray-100 text-gray-700 py-2 md:py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-200 transition-all duration-200 text-sm md:text-base"
-      >
-        Discuss {title.split(' ')[0]}
-        <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
-      </motion.button>
+      <div className="space-y-2 md:space-y-3">
+        <motion.button
+          onClick={scrollToContact}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="w-full bg-gray-100 text-gray-700 py-2 md:py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-200 transition-all duration-200 text-sm md:text-base"
+        >
+          Discuss {title.split(' ')[0]}
+          <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
+        </motion.button>
+
+        {/* CV SUBMISSION BUTTON - Only show for Career Development */}
+        {showCvButton && (
+          <motion.a
+            href="mailto:mwesinelie@yahoo.com,mneliah1978@gmail.com?subject=CV Submission - GGAU Career Opportunity&body=Hello GGAU Team,%0D%0A%0D%0AI am interested in career opportunities at GGAU and have attached my CV for your review.%0D%0A%0D%0APosition of Interest: [Please specify position or area]%0D%0A%0D%0A---%0D%0A[Your Full Name]%0D%0A[Your Phone Number]%0D%0A[Your Current Role/Institution]"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full bg-amber-500 text-white py-2 md:py-3 px-4 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-amber-600 transition-all duration-200 text-sm md:text-base"
+          >
+            <FileText className="w-3 h-3 md:w-4 md:h-4" />
+            Submit Your CV
+          </motion.a>
+        )}
+      </div>
     </motion.div>
   )
 }
