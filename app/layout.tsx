@@ -28,10 +28,12 @@ export default function RootLayout({
 
 // Simple Footer Component
 function Footer() {
+  const currentYear = new Date().getFullYear()
+  
   return (
     <footer className="bg-blue-900 text-white py-8">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <p>&copy; 2024 GGAU - Genetics, Genomics Association of Uganda</p>
+        <p>&copy; {currentYear} GGAU - Genetics, Genomics Association of Uganda</p>
         <p className="text-blue-200 mt-2">All for one, one for all</p>
       </div>
     </footer>
