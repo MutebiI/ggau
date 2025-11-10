@@ -1,6 +1,7 @@
+
 // 'use client'
 // import { motion } from 'framer-motion'
-// import { Award, GraduationCap, BookOpen, Users, Target, Microscope, FlaskConical, Dna, Brain, Heart, ArrowRight, Building2, Calendar, BarChart3, FileText, Mail, Phone } from 'lucide-react'
+// import { Award, GraduationCap, BookOpen, Users, Target, Microscope, FlaskConical, Dna, Brain, Heart, ArrowRight, Building2, Calendar, BarChart3, FileText, Mail, Phone, Download } from 'lucide-react'
 // import { ReactNode } from 'react'
 
 // // Define types for our components
@@ -21,6 +22,7 @@
 //   achievements: string[]
 //   icon: ReactNode
 //   color: ColorKey
+//   cvUrl: string
 // }
 
 // interface ExpertiseAreaProps {
@@ -126,27 +128,62 @@
 //               achievements={["DNA Awareness Pioneer", "UMPR Lead Innovator", "Healthviber Diagnostics Founder"]}
 //               icon={<Dna className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />}
 //               color="purple"
+//               cvUrl="/cvs/mwesige-nelson-cv.pdf"
 //             />
 //             <TeamMember
-//               name="Dr. Ogaram David"
-//               role="Research Lead & Senior Scientist"
-//               education="PhD in Molecular Biology"
-//               experience="15+ Years Research Experience"
-//               expertise={["Drug Discovery", "Clinical Trials", "Molecular Diagnostics"]}
-//               achievements={["20+ Publications", "International Collaborations", "Patent Holder"]}
+//               name="Dr. Ogaram David Akuban"
+//               role="Senior Research Consultant & Environmental Safety Expert"
+//               education="PhD, DIC, FRCS - University of London"
+//               experience="40+ Years in Occupational Health & Toxicology"
+//               expertise={["Occupational Health", "Environmental Safety", "Chemical Toxicology", "Policy Development"]}
+//               achievements={[
+//                 "Lead Developer of Uganda's Labour Laws", 
+//                 "Former Commissioner for Labour", 
+//                 "Environmental Policy Architect",
+//                 "International Chemical Safety Expert"
+//               ]}
 //               icon={<FlaskConical className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />}
 //               color="pink"
+//               cvUrl="/cvs/ogaram-david-cv.pdf"
 //             />
 //             <TeamMember
 //               name="Sr. Namutebi Erinah"
-//               role="Principal Investigator - Pediatric Genetics"
-//               education="MSc Medical Genetics"
-//               experience="12+ Years Clinical Genetics"
-//               expertise={["Pediatric Genomics", "Genetic Counseling", "Rare Diseases"]}
-//               achievements={["Community Health Programs", "Genetic Education", "Research Mentorship"]}
+//               role="Senior Nursing Officer & Clinical Coordinator"
+//               education="Advanced Diploma in General Nursing"
+//               experience="20+ Years in Clinical Care & HIV Management"
+//               expertise={["HIV/AIDS Care", "Palliative Care", "Pediatric Nursing", "Clinical Supervision"]}
+//               achievements={[
+//                 "Integrated Management of Acute Malnutrition", 
+//                 "Pediatric HIV/AIDS Specialist", 
+//                 "Clinical Team Leadership",
+//                 "Community Health Programs"
+//               ]}
 //               icon={<Heart className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />}
 //               color="indigo"
+//               cvUrl="/cvs/namutebi-erinah-cv.pdf"
 //             />
+//           </div>
+
+//           {/* Additional Research Team Member */}
+//           <div className="mt-12 md:mt-16">
+//             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-full">
+//               <TeamMember
+//                 name="Allan Akandwanaho, MSc"
+//                 role="Research Scientist & PhD Candidate"
+//                 education="MSc Cell & Molecular Biology - University of Turin"
+//                 experience="5+ Years in Developmental Biology Research"
+//                 expertise={["Developmental Biology", "Molecular Genetics", "Microscopy", "CRISPR Technology"]}
+//                 achievements={[
+//                   "PhD Candidate at Charles University", 
+//                   "Published in Frontiers in Immunology", 
+//                   "International Conference Presenter",
+//                   "CRISPR Genome Editing Expert"
+//                 ]}
+//                 icon={<Microscope className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />}
+//                 color="teal"
+//                 cvUrl="/cvs/allan-akandwanaho-cv.pdf"
+//               />
+//             </div>
 //           </div>
 //         </div>
 //       </section>
@@ -377,7 +414,7 @@
 // }
 
 // // Team Member Component (No Photo)
-// function TeamMember({ name, role, education, experience, expertise, achievements, icon, color }: TeamMemberProps) {
+// function TeamMember({ name, role, education, experience, expertise, achievements, icon, color, cvUrl }: TeamMemberProps) {
 //   const colorStyles: Record<ColorKey, string> = {
 //     purple: 'bg-purple-500',
 //     pink: 'bg-pink-500',
@@ -390,19 +427,19 @@
 //       initial={{ opacity: 0, y: 30 }}
 //       whileInView={{ opacity: 1, y: 0 }}
 //       transition={{ duration: 0.6 }}
-//       className="bg-white p-4 md:p-6 lg:p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 group w-full"
+//       className="bg-white p-4 md:p-6 lg:p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 group w-full flex flex-col h-full"
 //     >
 //       <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
 //         <div className={`w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 ${colorStyles[color]} rounded-xl md:rounded-2xl flex items-center justify-center text-white flex-shrink-0`}>
 //           {icon}
 //         </div>
-//         <div className="min-w-0">
+//         <div className="min-w-0 flex-1">
 //           <h3 className="text-lg md:text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors leading-tight">{name}</h3>
 //           <p className="text-purple-600 font-semibold text-sm md:text-base leading-tight">{role}</p>
 //         </div>
 //       </div>
 
-//       <div className="space-y-2 md:space-y-4">
+//       <div className="space-y-2 md:space-y-4 flex-1">
 //         <div className="flex items-center gap-2 text-xs md:text-sm text-gray-600">
 //           <GraduationCap className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
 //           <span className="leading-tight">{education}</span>
@@ -411,30 +448,42 @@
 //           <Award className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
 //           <span className="leading-tight">{experience}</span>
 //         </div>
-//       </div>
+      
+//         <div className="mt-4 md:mt-6">
+//           <h4 className="font-semibold text-gray-900 text-sm md:text-base mb-2 md:mb-3">Areas of Expertise</h4>
+//           <div className="flex flex-wrap gap-1 md:gap-2">
+//             {expertise.map((skill: string, index: number) => (
+//               <span key={skill} className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium leading-tight">
+//                 {skill}
+//               </span>
+//             ))}
+//           </div>
+//         </div>
 
-//       <div className="mt-4 md:mt-6">
-//         <h4 className="font-semibold text-gray-900 text-sm md:text-base mb-2 md:mb-3">Areas of Expertise</h4>
-//         <div className="flex flex-wrap gap-1 md:gap-2">
-//           {expertise.map((skill: string, index: number) => (
-//             <span key={skill} className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium leading-tight">
-//               {skill}
-//             </span>
-//           ))}
+//         <div className="mt-4 md:mt-6">
+//           <h4 className="font-semibold text-gray-900 text-sm md:text-base mb-2 md:mb-3">Key Qualifications</h4>
+//           <ul className="space-y-1 md:space-y-2 text-xs md:text-sm text-gray-600">
+//             {achievements.map((achievement: string, index: number) => (
+//               <li key={achievement} className="flex items-start gap-2">
+//                 <div className={`w-1.5 h-1.5 ${colorStyles[color]} rounded-full mt-1.5 md:mt-2 flex-shrink-0`} />
+//                 <span className="leading-tight">{achievement}</span>
+//               </li>
+//             ))}
+//           </ul>
 //         </div>
 //       </div>
 
-//       <div className="mt-4 md:mt-6">
-//         <h4 className="font-semibold text-gray-900 text-sm md:text-base mb-2 md:mb-3">Key Achievements</h4>
-//         <ul className="space-y-1 md:space-y-2 text-xs md:text-sm text-gray-600">
-//           {achievements.map((achievement: string, index: number) => (
-//             <li key={achievement} className="flex items-start gap-2">
-//               <div className={`w-1.5 h-1.5 ${colorStyles[color]} rounded-full mt-1.5 md:mt-2 flex-shrink-0`} />
-//               <span className="leading-tight">{achievement}</span>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
+//       {/* CV Download Button */}
+//       <motion.a
+//         href={cvUrl}
+//         download
+//         whileHover={{ scale: 1.02 }}
+//         whileTap={{ scale: 0.98 }}
+//         className="mt-6 w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-4 rounded-xl font-semibold flex items-center justify-center gap-2 hover:shadow-lg transition-all duration-200 group/download"
+//       >
+//         <Download className="w-4 h-4 group-hover/download:scale-110 transition-transform" />
+//         Download CV
+//       </motion.a>
 //     </motion.div>
 //   )
 // }
@@ -522,7 +571,6 @@
 //     </motion.div>
 //   )
 // }
-
 'use client'
 import { motion } from 'framer-motion'
 import { Award, GraduationCap, BookOpen, Users, Target, Microscope, FlaskConical, Dna, Brain, Heart, ArrowRight, Building2, Calendar, BarChart3, FileText, Mail, Phone, Download } from 'lucide-react'
@@ -708,6 +756,44 @@ export default function Team() {
                 cvUrl="/cvs/allan-akandwanaho-cv.pdf"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Youth & Future Scientists Section */}
+      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8 md:mb-12"
+          >
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-2">
+              Youth & <span className="text-purple-600">Future Scientists</span>
+            </h2>
+            <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
+              Nurturing the next generation of scientific leaders and innovators
+            </p>
+          </motion.div>
+
+          <div className="max-w-2xl mx-auto">
+            <TeamMember
+              name="Mwesige Elizabeth"
+              role="Young Science Scholar & Research Intern"
+              education="Kisubi High School - Ordinary Level (Science)"
+              experience="Student Researcher & IT Assistant"
+              expertise={["Biology Research", "Computer Literacy", "Science Communication", "Team Leadership"]}
+              achievements={[
+                "President - Biology & Chemistry Club", 
+                "Secretary - Computer Science Club", 
+                "GGAU Research & IT Assistant",
+                "Football for Friendship Diploma Recipient"
+              ]}
+              icon={<GraduationCap className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />}
+              color="teal"
+              cvUrl="/cvs/mwesige-elizabeth-cv.pdf"
+            />
           </div>
         </div>
       </section>
