@@ -419,48 +419,19 @@ export default function AskGGAU() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 md:mt-16"
         >
-          <div className="bg-gradient-to-br from-purple-600 via-blue-600 to-pink-600 rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
-            <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
-            <div className="relative">
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                Ready to <span className="text-pink-300">Collaborate</span>?
-              </h3>
-              <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Connect with our research team for detailed discussions about partnerships, funding opportunities, or scientific collaborations.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <motion.a
-                  href="mailto:mwesinelie@yahoo.com?subject=GGAU Partnership Inquiry"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-bold hover:shadow-2xl transition-all duration-300 shadow-lg flex items-center justify-center gap-3 group w-full sm:w-auto"
-                >
-                  <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  Start Conversation
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </motion.a>
-                
-                <motion.a
-                  href="/team"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  className="bg-white/20 backdrop-blur-sm text-white border border-white/30 px-8 py-4 rounded-2xl font-bold hover:bg-white/30 hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 w-full sm:w-auto"
-                >
-                  <Users className="w-5 h-5" />
-                  Meet Our Team
-                </motion.a>
-              </div>
-              
-              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center text-purple-200">
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  <span>+256 760 051963</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4" />
-                  <span>mwesinelie@yahoo.com</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Simple Prompt */}
+<div className="text-center mt-12">
+  <p className="text-gray-600 text-lg mb-4">
+    Didn't find your answer? Our team is ready to help.
+  </p>
+  <a 
+    href="/contact" 
+    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 text-lg"
+  >
+    Contact Our Research Team
+    <ArrowRight className="w-5 h-5" />
+  </a>
+</div>
         </motion.div>
       </div>
     </div>
