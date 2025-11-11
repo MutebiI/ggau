@@ -89,6 +89,83 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Scientific Credibility - For Funders */}
+{/* Scientific Credibility - For Funders - UPDATED WITH GREEN */}
+<section className="py-20 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Trusted Scientific Leadership
+      </h2>
+      <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        Decades of combined expertise driving Uganda's healthcare transformation
+      </p>
+    </div>
+    
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div className="bg-white rounded-xl p-6 shadow-lg border border-emerald-200 hover:shadow-xl transition-shadow">
+        <div className="text-3xl font-bold text-emerald-600 mb-2">25+</div>
+        <div className="text-gray-700 font-semibold">Years Medical Experience</div>
+      </div>
+      <div className="bg-white rounded-xl p-6 shadow-lg border border-emerald-200 hover:shadow-xl transition-shadow">
+        <div className="text-3xl font-bold text-emerald-600 mb-2">PhD</div>
+        <div className="text-gray-700 font-semibold">London-Trained Scientists</div>
+      </div>
+      <div className="bg-white rounded-xl p-6 shadow-lg border border-emerald-200 hover:shadow-xl transition-shadow">
+        <div className="text-3xl font-bold text-emerald-600 mb-2">8+</div>
+        <div className="text-gray-700 font-semibold">University Partnerships</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* Urgent Problem Statement - UPDATED WITH GREEN */}
+<section className="py-20 bg-gradient-to-r from-emerald-700 via-green-600 to-teal-600 text-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      Solving Africa's Healthcare Challenges
+    </h2>
+    <p className="text-xl text-emerald-100 mb-8 max-w-3xl mx-auto">
+      Uganda imports over 90% of its medical supplies. We're changing that through local innovation, 
+      reducing costs, and building sustainable healthcare infrastructure for future generations.
+    </p>
+    <motion.a
+      href="/about"
+      whileHover={{ scale: 1.05 }}
+      className="bg-white text-emerald-700 px-8 py-4 rounded-lg font-semibold inline-flex items-center gap-2 hover:bg-emerald-50 transition-colors"
+    >
+      Our Impact Story <ArrowRight className="w-5 h-5" />
+    </motion.a>
+  </div>
+</section>
+
+{/* Funders/Partners Call-to-Action - UPDATED WITH GREEN */}
+<section className="py-20 bg-gradient-to-br from-gray-50 to-emerald-50">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+      Join Our Mission
+    </h2>
+    <p className="text-xl text-gray-600 mb-8">
+      Partner with us to transform healthcare in Uganda through sustainable innovation
+    </p>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <motion.a
+        href="/contact"
+        whileHover={{ scale: 1.05 }}
+        className="bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl"
+      >
+        Become a Partner
+      </motion.a>
+      <motion.a
+        href="/ask-ggau"
+        whileHover={{ scale: 1.05 }}
+        className="border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-lg font-semibold hover:bg-emerald-50 transition-colors"
+      >
+        Ask Questions
+      </motion.a>
+    </div>
+  </div>
+</section>
     </div>
   )
 }
