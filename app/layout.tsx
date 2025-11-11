@@ -1,13 +1,42 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-// import Navbar from '@/components/Navbar'
 import Navbar from './components/Navbar'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'GGAU - Genetics, Genomics and AU | Medical Innovation Uganda',
-  description: 'Empowering Uganda through Genetics, Genomics and Medical Innovation',
+  title: 'GGAU - Genetics & Genomics Association of Uganda | Medical Research',
+  description: 'Leading genetics and genomics research in Uganda. Medical innovation, pharmaceutical production (UMPR), and healthcare transformation across Africa.',
+  keywords: 'genetics, genomics, Uganda, medical research, UMPR, healthcare, pharmaceuticals, Africa, DNA research',
+  authors: [{ name: 'GGAU Research Team' }],
+  creator: 'Genetics and Genomics Association of Uganda',
+  publisher: 'GGAU',
+  metadataBase: new URL('https://ggau-research.vercel.app'),
+  openGraph: {
+    title: 'GGAU - Genetics & Genomics Association of Uganda',
+    description: 'Transforming healthcare through genetics research and medical innovation in Africa',
+    url: 'https://ggau-research.vercel.app',
+    siteName: 'GGAU Research',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GGAU - Genetics & Genomics Association of Uganda',
+    description: 'Leading medical research and innovation in Uganda',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function RootLayout({
@@ -26,7 +55,7 @@ export default function RootLayout({
   )
 }
 
-// Simple Footer Component
+// Footer Component (unchanged)
 function Footer() {
   const currentYear = new Date().getFullYear()
   
