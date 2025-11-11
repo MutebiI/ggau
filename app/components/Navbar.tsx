@@ -41,7 +41,7 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {['Home', 'About', 'UMPR', 'african-pillar-initiative', 'Projects', 'Team', 'Contact'].map((item) => (
+            {['Home', 'About', 'UMPR', 'african-pillar-initiative', 'Projects', 'Team','ask-ggau', 'Contact'].map((item) => (
               <a
                 key={item}
                 href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}

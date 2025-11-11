@@ -291,8 +291,6 @@
 //     </motion.div>
 //   )
 // }
-
-
 'use client'
 import { motion } from 'framer-motion'
 import { Target, Eye, Heart, Users, Shield, ArrowDown, HandHeart, FlaskConical, Dna, Microscope, Brain } from 'lucide-react'
