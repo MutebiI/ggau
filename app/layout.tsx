@@ -46,6 +46,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="MCzbIHY09P_QaVxfc2tmW-MEpRK5o7NlGk-ABsei-m4" />
+      </head>
       <body className={inter.className}>
         <Navbar />
         <main>{children}</main>
@@ -55,7 +59,7 @@ export default function RootLayout({
   )
 }
 
-// Footer Component (unchanged)
+// Footer Component
 function Footer() {
   const currentYear = new Date().getFullYear()
   
