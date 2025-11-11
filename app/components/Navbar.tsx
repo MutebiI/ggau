@@ -67,7 +67,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden bg-white border-t border-gray-200 py-2">
-            {['Home', 'About', 'UMPR', 'african-pillar-initiative', 'Projects', 'Team', 'Contact'].map((item) => (
+            {['Home', 'About', 'UMPR', 'african-pillar-initiative', 'Projects', 'Team', 'ask-ggau', 'Contact'].map((item) => (
               <a
                 key={item}
                 href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
