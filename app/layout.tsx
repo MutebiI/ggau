@@ -48,7 +48,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Google Search Console Verification */}
-        <meta name="google-site-verification" content="MCzbIHY09P_QaVxfc2tmW-MEpRK5o7NlGk-ABsei-m4" />
+        <meta name="google-site-verification" content="cSPaHSTn66UzB5sm-A_8Bdcd7wjJrpWUKAVpbgN9hPg" />
       </head>
       <body className={inter.className}>
         <Navbar />
