@@ -344,7 +344,7 @@ export default function About() {
               </motion.a>
               
               <motion.a
-                href="/research"
+                href="/projects"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white/20 backdrop-blur-sm text-white border border-white/30 px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold flex items-center justify-center gap-2 md:gap-3 hover:bg-white/30 transition-all w-full sm:w-auto text-sm md:text-base"
